@@ -13,7 +13,7 @@ var = os.environ
 def line():
     print("==" * 40)
 
-
+#B)
 def print_dict(var):
     line()
     print("Impressão de dicionário: ")
@@ -36,7 +36,7 @@ def print_variables2(var):
     for i in var:
         print("Variável:", i, "- Valor:", var[i])
         
-
+#C
 def print_python_road():
     line()
     print("Caminho completo do diretório corrente: ", os.getcwd())
