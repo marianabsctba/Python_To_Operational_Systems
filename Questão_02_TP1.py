@@ -11,7 +11,7 @@ import os
 var = os.environ
 
 def line():
-    print("==" * 20)
+    print("==" * 40)
 
 
 def print_dict(var):
@@ -23,7 +23,7 @@ def print_dict(var):
 
 def print_variables(var):
     line()
-    print("Usando palavras chaves: ")
+    print("Usando palavras chaves: (meros exemplos)")
     print(var['HOMEDRIVE'])
     print(var['HOMEPATH'])
     print(var['USERNAME'])
@@ -35,7 +35,14 @@ def print_variables2(var):
     i = 0
     for i in var:
         print("Variável:", i, "- Valor:", var[i])
+        
+
+def print_python_road():
+    line()
+    print("Caminho completo do diretório corrente: ", os.getcwd())
  
+
 print_dict(var)
 print_variables(var)
 print_variables2(var)
+print_python_road()
