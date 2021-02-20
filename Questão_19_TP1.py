@@ -16,15 +16,15 @@ def size(bytes, suffix="B"):
 def partition_info():
     p = psutil.disk_partitions()
     for partition in p:
-        if partition[1] == partition.mountpoint:
-            print(f"Ponto de Montagem: {partition.mountpoint}") #considerado o ponto de montagem do sistema
-            try:
-                partition_usage = psutil.disk_usage(partition.mountpoint)
-            except:
-                print("Falhou. Tente novamente.")
-                continue
-            disponible = partition_usage.free # subentendendo que se trata do armazenamento ainda disponível para ser usado
-            print(f"Armazenamento disponível na partição: {size(disponible)}")
+        print(f"Ponto de Montagem: {partition.mountpoint}") #considerado o ponto de montagem do sistema
+        try:
+            partition_usage = psutil.disk_usage(partition.mountpoint)
+        except:
+            print("Falhou. Tente novamente.")            
+            continue
+        print(f"Armazenamento disponível na partição: {size(partition_usage.free)}")
+        print(f"Armazenamento total na partição: {size(partition_usage.total)}")
+        
         
 
 partition_info()
