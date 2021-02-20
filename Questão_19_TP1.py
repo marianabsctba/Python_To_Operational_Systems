@@ -3,6 +3,7 @@
 
 import psutil
 
+
 def size(bytes, suffix="B"):
     factor = 1024
     for unit in ["", "K", "M", "G", "T", "P"]:
@@ -14,14 +15,15 @@ def size(bytes, suffix="B"):
 def partition_info():
     p = psutil.disk_partitions()
     for partition in p:
-        print(f"Ponto de Montagem: {partition.mountpoint}") #considerado o ponto de montagem do sistema
-        try:
-            partition_usage = psutil.disk_usage(partition.mountpoint)
-        except:
-            print("Falhou. Tente novamente.")
-            continue
-        disponible = partition_usage.free # subentendendo que se trata do armazenamento ainda disponível para ser usado
-        print(f"Armazenamento disponível na partição: {size(disponible)}")
+        if partition[1] == partition.mountpoint:
+            print(f"Ponto de Montagem: {partition.mountpoint}") #considerado o ponto de montagem do sistema
+            try:
+                partition_usage = psutil.disk_usage(partition.mountpoint)
+            except:
+                print("Falhou. Tente novamente.")
+                continue
+            disponible = partition_usage.free # subentendendo que se trata do armazenamento ainda disponível para ser usado
+            print(f"Armazenamento disponível na partição: {size(disponible)}")
         
 
 partition_info()
