@@ -3,6 +3,7 @@
 import os
 
 def height_files():
+    print("=== Verifique abaixo a quantidade em kB de cada arquivo do diretório corrente ===")
 
     for file in os.listdir('.'): #considerou o diretório corrente
         file_in_dir = os.path.join(file)
@@ -16,4 +17,5 @@ def height_files():
 
 
 height_files()
+        
         
