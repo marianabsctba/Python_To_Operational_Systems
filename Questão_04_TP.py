@@ -3,6 +3,6 @@
 import os
 
 def relactive_dir():
-    print(os.path.abspath('q1.txt'))
+    print(os.path.abspath('q1.py'))
     
 relactive_dir()
