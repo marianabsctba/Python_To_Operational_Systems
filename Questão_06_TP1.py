@@ -17,7 +17,7 @@ def file_extension():
 def file_extension_two():
     line()
     print("Versão B do exercício")
-    print("As extensões encontradas para o diretório corrente são: ")
+    print("As extensões de arquivos encontradas para o diretório corrente são: ")
     for file_name in os.listdir('.'):
         name, extension = os.path.splitext(file_name)
         print(extension)
