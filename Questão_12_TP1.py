@@ -18,6 +18,5 @@ def create_subprocess(user_file):
     return subprocess.run(["notepad", f"{user_file}"])
 
 
-create_process_os()
-create_calc_system()
-create_calc_subprocess()
+create_process_os(user_file)
+create_subprocess(user_file)
