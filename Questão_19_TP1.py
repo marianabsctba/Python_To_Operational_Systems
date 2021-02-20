@@ -3,7 +3,6 @@
 
 import psutil
 
-
 def size(bytes, suffix="B"):
     factor = 1024
     for unit in ["", "K", "M", "G", "T", "P"]:
@@ -21,7 +20,7 @@ def partition_info():
         except:
             print("Falhou. Tente novamente.")
             continue
-        disponible = partition_usage.free- partition_usage.used # subtração do valor livre menos o utilizado, subentendendo que se trata do armazenamento ainda disponível
+        disponible = partition_usage.free # subentendendo que se trata do armazenamento ainda disponível para ser usado
         print(f"Armazenamento disponível na partição: {size(disponible)}")
         
 
