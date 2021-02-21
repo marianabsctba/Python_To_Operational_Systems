@@ -5,8 +5,8 @@ import os, platform, datetime, time
 
 diret = os.listdir('.')
 
-
-def filter_files_creation(diret):    
+def filter_files_creation(diret):
+    print("===Verifique abaixo datas de criação/modificação dos arquivos do diretório corrente===")
 
     for file in diret: #considerou o diretório corrente
         file_in_dir = os.path.join(file)
