@@ -17,6 +17,11 @@ def create_process_os(user_file):
 def create_subprocess(user_file):
     return subprocess.run(["notepad", f"{user_file}"])
 
+def create_spawn(): # criado notepad em branco externamente
+    execut = os.environ['SYSTEMROOT'] + '\\System32\\notepad'
+    os.spawnl(os.P_NOWAIT, execut, " ")
+
 
 create_process_os(user_file)
 create_subprocess(user_file)
+create_spawn(user_file)
